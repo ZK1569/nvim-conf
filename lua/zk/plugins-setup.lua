@@ -50,8 +50,29 @@ return packer.startup(function(use)
     -- commenting with gc
     use("numToStr/Comment.nvim")
 
+    -- icons 
+    use("kyazdani42/nvim-web-devicons")
+
     -- file explorer
     use("nvim-tree/nvim-tree.lua")
+    
+    -- statusline 
+    use("nvim-lualine/lualine.nvim")
+
+    -- file finder
+    use({"nvim-telescope/telescope-fzf-native.nvim", run="make"})
+    use({"nvim-telescope/telescope.nvim", branch = "0.1.x" })
+
+    -- autocompletion
+    use("hrsh7th/nvim-cmp")
+    use("hrsh7th/cmp-buffer")
+    use("hrsh7th/cmp-path")
+
+    -- snippets
+    use("L3MON4D3/LuaSnip") 
+    use("saadparwaiz1/cmp_luasnip") 
+    use("rafamadriz/friendly-snippets")
+
 
     if packer_bootstrap then
         require ("packer").sync()
