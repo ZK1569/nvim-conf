@@ -29,6 +29,9 @@ end
 return packer.startup(function(use)
     use("wbthomason/packer.nvim")
 
+    -- lua functions that many plugins use
+    use("nvim-lua/plenary.nvim")
+
     -- colorscheme
     use("bluz71/vim-nightfly-guicolors")
 
@@ -43,6 +46,12 @@ return packer.startup(function(use)
 
     -- TODO: mettre une decription
     use("vim-scripts/ReplaceWithRegister")
+
+    -- commenting with gc
+    use("numToStr/Comment.nvim")
+
+    -- file explorer
+    use("nvim-tree/nvim-tree.lua")
 
     if packer_bootstrap then
         require ("packer").sync()
