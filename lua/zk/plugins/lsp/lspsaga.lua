@@ -1,6 +1,6 @@
 local saga_status, saga = pcall(require, "saga")
 if not saga_status then
-    return 
+    return
 end
 
 saga.init_lsp_saga({

@@ -23,7 +23,7 @@ vim.cmd([[
 
 local status, packer = pcall(require, "packer")
 if not status then
-    return 
+    return
 end
 
 return packer.startup(function(use)
@@ -37,7 +37,7 @@ return packer.startup(function(use)
 
     -- tmux & split window navigation
     use("christoomey/vim-tmux-navigator")
-    
+
     -- maximaizes and restores current window size 
     use("szw/vim-maximizer")
 
@@ -55,7 +55,7 @@ return packer.startup(function(use)
 
     -- file explorer
     use("nvim-tree/nvim-tree.lua")
-    
+
     -- statusline 
     use("nvim-lualine/lualine.nvim")
 
