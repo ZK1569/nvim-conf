@@ -81,11 +81,25 @@ return packer.startup(function(use)
     use("neovim/nvim-lspconfig")
 
     -- config lsp servers
-    use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
     use({"glepnir/lspsaga.nvim", branch = "main"})
     use("jose-elias-alvarez/typescript.nvim")
     use("onsails/lspkind.nvim")
+
+    -- treesitter 
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        run = function()
+            require("nvim-treesitter.install").update({with_sync = true })
+        end,
+    })
+
+    -- auto closing
+    use("windwp/nvim-autopairs")
+    use("windwp/nvim-ts-autotag")
+
+    -- git 
+    use("lewis6991/gitsigns.nvim")
 
 
     if packer_bootstrap then
