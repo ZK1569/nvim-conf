@@ -106,6 +106,9 @@ return packer.startup(function(use)
     -- git 
     use("lewis6991/gitsigns.nvim")
 
+    -- Bufferline
+    use("akinsho/bufferline.nvim")
+    use("moll/vim-bbye")
 
     if packer_bootstrap then
         require ("packer").sync()
