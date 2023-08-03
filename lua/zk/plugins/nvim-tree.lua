@@ -1,6 +1,6 @@
 local setup, nvimtree = pcall(require, "nvim-tree")
-if not setup then 
-    return 
+if not setup then
+    return
 end
 
 -- recommended settings from nvim-tree documentation 
