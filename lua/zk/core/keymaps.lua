@@ -38,3 +38,4 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 -- bufferline
 keymap.set("n", "<leader>w", ":bd<CR>") -- clsoe the current buffer
 keymap.set("n", "<leader><Tab>", ":bnext<CR>") -- go to next buffer
+keymap.set("n", "<leader><S-Tab>", ":bprevious<CR>")
