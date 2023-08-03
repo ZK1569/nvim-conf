@@ -110,6 +110,15 @@ return packer.startup(function(use)
     use("akinsho/bufferline.nvim")
     use("moll/vim-bbye")
 
+    -- indent blank line 
+    use("lukas-reineke/indent-blankline.nvim")
+
+    -- color for text
+    use("norcalli/nvim-colorizer.lua")
+
+    -- todo comments
+    use("folke/todo-comments.nvim")
+
     if packer_bootstrap then
         require ("packer").sync()
     end
