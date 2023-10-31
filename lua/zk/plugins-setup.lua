@@ -105,6 +105,7 @@ return packer.startup(function(use)
 
     -- git 
     use("lewis6991/gitsigns.nvim")
+    use("tpope/vim-fugitive")
 
     -- Bufferline
     use("akinsho/bufferline.nvim")
