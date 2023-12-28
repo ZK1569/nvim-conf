@@ -44,9 +44,6 @@ return packer.startup(function(use)
     -- surround words with what you want 
     use("tpope/vim-surround")
 
-    -- TODO: mettre une decription
-    use("vim-scripts/ReplaceWithRegister")
-
     -- commenting with gc
     use("numToStr/Comment.nvim")
 
@@ -104,7 +101,6 @@ return packer.startup(function(use)
     use("windwp/nvim-ts-autotag")
 
     -- git 
-    use("lewis6991/gitsigns.nvim")
     use("tpope/vim-fugitive")
 
     -- Bufferline
