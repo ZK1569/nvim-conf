@@ -1,0 +1,5 @@
+require("zk.core.colors")
+require("zk.core.keymaps")
+require("zk.plugins-setup")
+require("zk.plugins.telescope")
+require("zk.plugins.treesitter")
