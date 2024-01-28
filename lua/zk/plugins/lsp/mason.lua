@@ -13,11 +13,6 @@ mason.setup()
 mason_lspconfig.setup({
     ensure_installed = {
         "tsserver",
-        "html",
-        "cssls",
-        "tailwindcss",
-        "angularls",
-        "arduino_language_server",
         "bashls",
         "clangd",
         "dockerls",
