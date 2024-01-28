@@ -8,6 +8,7 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "<leader>nh", ":nohl<CR>") -- delete hightLight of the screne
 
 keymap.set("n", "x", '"_x') -- When deleting a caractere do not copy it
+keymap.set("n", "U", ":redo<CR>") -- Redo 
 
 -- commands for split window
 -- TODO: Add the possibility to change split window size
@@ -21,8 +22,7 @@ keymap.set("n", "<leader>w", ":bd<CR>")
 
 -- vim-maximizer 
 
--- nvim-tree 
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>e", ":Ex<CR>")
 
 -- telescope 
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
@@ -30,3 +30,10 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+
+-- Git fugitive
+keymap.set("n", "<leader>gd", ":Git diff<CR>")
+keymap.set("n", "<leader>gl", ":Git log --oneline<CR>")
+keymap.set("n", "<leader>ga", ":Git add .<CR>")
+keymap.set("n", "<leader>gc", ":Git commit -m ''<Left>", { noremap = true, silent = true })
+keymap.set("n", "<leader>gp", ":Git push<CR>")
