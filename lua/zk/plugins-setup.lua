@@ -120,6 +120,9 @@ return packer.startup(function(use)
     -- todo comments
     use("folke/todo-comments.nvim")
 
+    -- formatter
+    use("mhartington/formatter.nvim")
+
     if packer_bootstrap then
         require ("packer").sync()
     end
