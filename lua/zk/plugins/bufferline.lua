@@ -1,11 +1,9 @@
-local setup, bufferline = pcall(require, "bufferline")
-if not setup then
-    print("ERROR bufferline")
-    return
-end
-
-bufferline.setup({
-    options = {
-        diagnostics = "nvim_lsp",
-    }
-})
+return {
+	"akinsho/bufferline.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	opts = {
+		options = {
+			diagnostics = "nvim_lsp",
+		},
+	},
+}
