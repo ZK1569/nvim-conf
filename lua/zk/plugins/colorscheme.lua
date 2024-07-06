@@ -1,29 +1,29 @@
 -- INFO: catppuccin theme
--- return {
--- 	"catppuccin/nvim",
--- 	priority = 1000,
--- 	config = function()
--- 		require("catppuccin").setup({
--- 			flavour = "mocha",
--- 		})
---
--- 		vim.cmd.colorscheme("catppuccin")
--- 	end,
--- }
-
--- INFO: tokyonight theme
 return {
-	"folke/tokyonight.nvim",
+	"catppuccin/nvim",
 	priority = 1000,
 	config = function()
-		require("tokyonight").setup({
-			-- style = "moon",
-			style = "night",
+		require("catppuccin").setup({
+			flavour = "mocha",
 		})
 
-		vim.cmd("colorscheme tokyonight")
+		vim.cmd.colorscheme("catppuccin")
 	end,
 }
+
+-- INFO: tokyonight theme
+-- return {
+-- 	"folke/tokyonight.nvim",
+-- 	priority = 1000,
+-- 	config = function()
+-- 		require("tokyonight").setup({
+-- 			-- style = "moon",
+-- 			style = "night",
+-- 		})
+--
+-- 		vim.cmd("colorscheme tokyonight")
+-- 	end,
+-- }
 
 -- INFO: 🌊 KANAGAWA.nvim 🌊
 -- return {
