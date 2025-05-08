@@ -1,31 +1,52 @@
 return {
-	"stevearc/conform.nvim",
-	event = { "BufReadPre", "BufNewFile" },
-	config = function()
-		local conform = require("conform")
+    "stevearc/conform.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+        local conform = require("conform")
 
-		conform.setup({
-			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
-				svelte = { "prettier" },
-				css = { "prettier" },
-				html = { "prettier" },
-				json = { "prettier" },
-				yaml = { "prettier" },
-				markdown = { "prettier" },
-				graphql = { "prettier" },
-				liquid = { "prettier" },
-				lua = { "stylua" },
-				python = { "isort" },
-			},
-			format_on_save = {
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
-			},
-		})
-	end,
+        conform.setup({
+            formatters_by_ft = {
+                javascript = { "prettierd" },
+                typescript = { "prettierd" },
+                javascriptreact = { "prettierd" },
+                typescriptreact = { "prettierd" },
+                css = { "prettierd" },
+                html = { "prettierd" },
+                json = { "prettierd" },
+                yaml = { "prettierd" },
+                markdown = { "prettierd" },
+
+                lua = { "stylua" },
+                python = { "isort", "black" },
+                go = { "gofmt" },
+                zig = { "zigfmt" },
+                c = { "clang-format" },
+                cpp = { "clang-format" },
+                rust = { "rustfmt", lsp_format = "fallback" },
+            },
+
+            format_on_save = {
+                lsp_fallback = true,
+                async = false,
+                timeout_ms = 1000,
+            },
+
+            formatters = {
+                prettierd = {
+                    prepend_args = { "--tab-width", "4" },
+                },
+                prettier = {
+                    prepend_args = { "--tab-width", "4" },
+                },
+                stylua = {
+                    prepend_args = { "--indent-width", "4" },
+                },
+                clang_format = {
+                    prepend_args = { "--style={BasedOnStyle: LLVM, IndentWidth: 2}" },
+                },
+                gofmt = {},
+                zigfmt = {},
+            },
+        })
+    end,
 }
