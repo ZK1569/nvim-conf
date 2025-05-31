@@ -15,7 +15,7 @@ return {
 
 		mason_lspconfig.setup({
 			ensure_installed = {
-				"tsserver",
+				-- "tsserver",
 				"bashls",
 				"clangd",
 				"dockerls",
@@ -23,16 +23,19 @@ return {
 				"jsonls",
 				"zk", -- for markdown
 				"powershell_es",
-				"pyre", -- for python
+				-- "pyre", -- for python
 				"rust_analyzer",
+				"gopls",
 			},
+
+			automatic_installation = true,
 		})
 
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"prettier",
 				"stylua",
-				"isort",
+				-- "isort",
 				"pylint",
 				"eslint_d",
 			},
