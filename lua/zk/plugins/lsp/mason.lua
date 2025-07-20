@@ -15,7 +15,7 @@ return {
 
 		mason_lspconfig.setup({
 			ensure_installed = {
-				-- "tsserver",
+				"ts_ls",
 				"bashls",
 				"clangd",
 				"dockerls",
@@ -23,9 +23,10 @@ return {
 				"jsonls",
 				"zk", -- for markdown
 				"powershell_es",
-				-- "pyre", -- for python
+				"pyre", -- for python
 				"rust_analyzer",
 				"gopls",
+				"zls",
 			},
 
 			automatic_installation = true,

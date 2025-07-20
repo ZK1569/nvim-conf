@@ -35,6 +35,7 @@ return {
 				"dockerfile",
 				"gitignore",
 				"python",
+				"zig",
 			},
 			"rust",
 			"go",
