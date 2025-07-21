@@ -7,6 +7,6 @@ return {
 		dashboard = { enabled = true },
 		input = { enabled = true },
 		notifier = { enabled = true },
-		scroll = { enabled = true },
+		scroll = { enabled = false },
 	},
 }

@@ -17,7 +17,7 @@ return {
 				markdown = { "prettierd" },
 
 				lua = { "stylua" },
-				python = { "autopep8" },
+				python = { "ruff" },
 				go = { "gofmt" },
 				zig = { "zigfmt" },
 				c = { "clang-format" },

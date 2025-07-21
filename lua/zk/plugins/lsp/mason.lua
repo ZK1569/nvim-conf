@@ -26,6 +26,7 @@ return {
 				-- "pyre", -- for python
 				"rust_analyzer",
 				"gopls",
+				"mypy",
 			},
 
 			automatic_installation = true,
@@ -36,7 +37,8 @@ return {
 				"prettier",
 				"stylua",
 				-- "isort",
-				"pylint",
+				-- "pylint",
+				"ruff",
 				"eslint_d",
 			},
 		})
