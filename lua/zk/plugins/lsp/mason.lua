@@ -23,7 +23,7 @@ return {
 				"jsonls",
 				"zk", -- for markdown
 				"powershell_es",
-				"pyre", -- for python
+				"pyright", -- for python
 				"rust_analyzer",
 				"gopls",
 				"zls",
