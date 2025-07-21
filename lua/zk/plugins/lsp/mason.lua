@@ -26,7 +26,6 @@ return {
 				"pyre", -- for python
 				"rust_analyzer",
 				"gopls",
-				"mypy",
 				"zls",
 			},
 
@@ -40,6 +39,7 @@ return {
 				-- "isort",
 				-- "pylint",
 				"ruff",
+				"mypy",
 				"eslint_d",
 			},
 		})
