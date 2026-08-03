@@ -17,7 +17,7 @@ return {
 				markdown = { "prettierd" },
 
 				lua = { "stylua" },
-				python = { "autopep8" },
+				python = { "ruff_format", "ruff_organize_imports" },
 				go = { "gofmt" },
 				zig = { "zigfmt" },
 				c = { "clang-format" },
@@ -46,6 +46,14 @@ return {
 				},
 				gofmt = {},
 				zigfmt = {},
+				ruff_format = {
+					args = { "format", "--stdin-filename", "$FILENAME", "-" },
+					stdin = true,
+				},
+				ruff_organize_imports = {
+					args = { "check", "--select", "I", "--fix", "--stdin-filename", "$FILENAME", "-" },
+					stdin = true,
+				},
 			},
 		})
 	end,
