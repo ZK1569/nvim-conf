@@ -1,8 +1,9 @@
-local orig = vim.ui.input
-vim.ui.input = function(opts, on_confirm)
-	print("↪ snacks: vim.ui.input appelé")
-	return orig(opts, on_confirm)
-end
+vim.opt.termguicolors = true
+vim.cmd.colorscheme("habamax")
 
-require("zk.core")
-require("zk.lazy")
+require("zk.core.options")
+require("zk.core.statusline")
+require("zk.core.keymap")
+require("zk.core.autocmd")
+
+require("zk.plugins.pack")
