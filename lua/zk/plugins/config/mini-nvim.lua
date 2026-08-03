@@ -20,7 +20,4 @@ require("mini.starter").setup({})
 vim.keymap.set("n", "<leader>hp", function()
 	MiniDiff.toggle_overlay()
 end, { desc = "Preview diff overlay" })
-vim.keymap.set("n", "<leader>hb", function()
-	require("mini.git").show_at_cursor()
-end, { desc = "Git blame/show" })
 
