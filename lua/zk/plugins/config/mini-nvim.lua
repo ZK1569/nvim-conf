@@ -3,9 +3,21 @@ require("mini.comment").setup({})
 require("mini.move").setup({})
 require("mini.indentscope").setup({})
 require("mini.pairs").setup({})
-require("mini.trailspace").setup({})
 require("mini.bufremove").setup({})
-require("mini.notify").setup({})
+require("mini.notify").setup({
+	content = {
+		sort = function(notify_array)
+			local filtered = vim.tbl_filter(function(notif)
+				return not (
+					notif.data
+					and notif.data.source == "lsp_progress"
+					and notif.data.client_name == "basedpyright"
+				)
+			end, notify_array)
+			return require("mini.notify").default_sort(filtered)
+		end,
+	},
+})
 require("mini.icons").setup({})
 require("mini.diff").setup({
 	view = {
@@ -15,9 +27,7 @@ require("mini.diff").setup({
 })
 require("mini.git").setup({})
 require("mini.input").setup({})
-require("mini.starter").setup({})
 
 vim.keymap.set("n", "<leader>hp", function()
-	MiniDiff.toggle_overlay()
+	require("mini.diff").toggle_overlay()
 end, { desc = "Preview diff overlay" })
-

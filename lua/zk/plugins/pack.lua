@@ -25,13 +25,17 @@ vim.pack.add({
 	},
 	"https://github.com/L3MON4D3/LuaSnip",
 
-    "https://github.com/nvim-lua/plenary.nvim",
-    "https://github.com/kdheepak/lazygit.nvim",
+	"https://github.com/nvim-lua/plenary.nvim",
+	"https://github.com/kdheepak/lazygit.nvim",
+	"https://github.com/nvimdev/dashboard-nvim",
+	"https://github.com/folke/todo-comments.nvim",
 })
 
 require("zk.plugins.config.nvim-tree")
 require("zk.plugins.config.zfz-lua")
 require("zk.plugins.config.mini-nvim")
 require("zk.plugins.config.treesitter")
+require("zk.plugins.config.starter")
+require("zk.plugins.config.todo-comments")
 
 require("zk.plugins.lsp.lsp")

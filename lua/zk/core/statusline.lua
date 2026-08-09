@@ -59,7 +59,7 @@ local function file_type()
 		return " \u{f15b} " -- nf-fa-file_o
 	end
 
-	return ((icons[ft] or " \u{f15b} ") .. ft)
+	return ((icons[ft] or " \u{f15b} ") .. ft .. " ")
 end
 
 -- File size with Nerd Font icon

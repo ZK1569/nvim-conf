@@ -1,3 +1,5 @@
+require("mason").setup({})
+
 local diagnostic_signs = {
 	Error = "\u{f057} ",
 	Warn = "\u{f071} ",
@@ -46,7 +48,7 @@ local function lsp_on_attach(ev)
 	local bufnr = ev.buf
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
-	vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 
 	vim.keymap.set("n", "<leader>gS", function()
 		vim.cmd("vsplit")
@@ -94,12 +96,11 @@ vim.keymap.set("n", "<leader>dl", vim.diagnostic.open_float, { desc = "Show line
 require("blink.cmp").setup({
 	keymap = {
 		preset = "none",
-		["<C-Space>"] = { "show", "hide" },
 		["<CR>"] = { "accept", "fallback" },
-		["<C-j>"] = { "select_next", "fallback" },
-		["<C-k>"] = { "select_prev", "fallback" },
-		["<Tab>"] = { "snippet_forward", "fallback" },
-		["<S-Tab>"] = { "snippet_backward", "fallback" },
+		["<C-j>"] = { "show", "select_next", "fallback" },
+		["<C-k>"] = { "show", "select_prev", "fallback" },
+		["<Down>"] = { "select_next", "fallback" },
+		["<Up>"] = { "select_prev", "fallback" },
 	},
 	appearance = { nerd_font_variant = "mono" },
 	completion = {
@@ -133,6 +134,19 @@ vim.lsp.config("lua_ls", {
 		},
 	},
 })
+vim.lsp.config("basedpyright", {
+	settings = {
+		basedpyright = {
+			analysis = {
+				autoImportCompletions = true,
+				typeCheckingMode = "standard",
+				useLibraryCodeForTypes = true,
+				autoSearchPaths = true,
+				diagnosticMode = "openFilesOnly",
+			},
+		},
+	},
+})
 vim.lsp.config("pyright", {})
 vim.lsp.config("bashls", {})
 vim.lsp.config("ts_ls", {})
@@ -149,8 +163,8 @@ do
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 
-	local flake8 = require("efmls-configs.linters.flake8")
-	local black = require("efmls-configs.formatters.black")
+	local mypy = require("efmls-configs.linters.mypy")
+	local ruff = require("efmls-configs.formatters.ruff")
 
 	local prettier_d = require("efmls-configs.formatters.prettier_d")
 	local eslint_d = require("efmls-configs.linters.eslint_d")
@@ -200,7 +214,7 @@ do
 				jsonc = { eslint_d, fixjson },
 				lua = { luacheck, stylua },
 				markdown = { prettier_d },
-				python = { flake8, black },
+				python = { mypy, ruff },
 				sh = { shellcheck, shfmt },
 				typescript = { eslint_d, prettier_d },
 				typescriptreact = { eslint_d, prettier_d },
@@ -213,6 +227,7 @@ end
 
 vim.lsp.enable({
 	"lua_ls",
+	"basedpyrigth",
 	"pyright",
 	"bashls",
 	"ts_ls",
